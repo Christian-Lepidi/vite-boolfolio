@@ -1,17 +1,18 @@
 <script>
 import axios from "axios";
+import { store, api } from "./store";
 
 export default {
   data() {
     return {
       title: "Boolpress",
-      projects: [],
+      store,
     };
   },
 
   created() {
-    axios.get("http://127.0.0.1:8000/api/projects").then((response) => {
-      this.projects = response.data;
+    axios.get(api.baseUrl + "projects").then((response) => {
+      store.projects = response.data;
     });
   },
 };
@@ -19,7 +20,7 @@ export default {
 
 <template>
   <h1>{{ title }}</h1>
-  <div v-for="project in projects">
+  <div v-for="project in store.projects">
     <ul>
       <li><strong>Titolo:</strong> {{ project.title }}</li>
       <li><strong>Descrizione:</strong> {{ project.description }}</li>
