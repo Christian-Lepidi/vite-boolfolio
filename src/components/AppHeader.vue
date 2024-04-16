@@ -1,13 +1,13 @@
 <script>
 export default {
- data() {};
-}
+  props: { title: String },
+};
 </script>
 
 <template>
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="#">{{ title }}</a>
     </div>
   </nav>
 </template>

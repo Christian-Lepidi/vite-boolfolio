@@ -22,7 +22,7 @@ export default {
 </script>
 
 <template>
-  <app-header />
+  <app-header :title="title" />
   <div class="container mt-5">
     <div v-for="project in store.projects">
       <ul>
